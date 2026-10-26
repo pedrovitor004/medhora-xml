@@ -65,7 +65,7 @@ O design das interfaces é planejado no Figma e serve como referência para as d
 
 O mesmo conceito de aplicativo também está sendo desenvolvido com **Jetpack Compose**, para explorar a construção declarativa de interfaces Android.
 
-➡️ **[MedHora — Jetpack Compose](https://github.com/SEU-USUARIO/medhora-compose)**
+➡️ **[MedHora — Jetpack Compose](https://github.com/pedrovitor004/medhora-compose)**
 
 ## 👥 Equipe
 
