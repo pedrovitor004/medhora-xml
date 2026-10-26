@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.medhoraxml.ui.home.HomeFragment"
+        android:label="@string/home_title"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_cadastro"
+            app:destination="@id/cadastroFragment" />
+        <action
+            android:id="@+id/action_home_to_detalhes"
+            app:destination="@id/detalhesFragment" />
+        <action
+            android:id="@+id/action_home_to_historico"
+            app:destination="@id/historicoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cadastroFragment"
+        android:name="com.example.medhoraxml.ui.cadastro.CadastroFragment"
+        android:label="@string/cadastro_title"
+        tools:layout="@layout/fragment_cadastro" />
+
+    <fragment
+        android:id="@+id/detalhesFragment"
+        android:name="com.example.medhoraxml.ui.detalhes.DetalhesFragment"
+        android:label="@string/detalhes_title"
+        tools:layout="@layout/fragment_detalhes" />
+
+    <fragment
+        android:id="@+id/historicoFragment"
+        android:name="com.example.medhoraxml.ui.historico.HistoricoFragment"
+        android:label="@string/historico_title"
+        tools:layout="@layout/fragment_historico" />
+
+</navigation>

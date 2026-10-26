@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MedHora XML</string>
+    <string name="home_title">Início</string>
+    <string name="cadastro_title">Cadastro de medicamento</string>
+    <string name="detalhes_title">Detalhes do medicamento</string>
+    <string name="historico_title">Histórico</string>
+    <string name="placeholder_message">Tela inicial para desenvolvimento futuro.</string>
+    <string name="open_cadastro">Abrir cadastro</string>
+    <string name="open_detalhes">Abrir detalhes</string>
+    <string name="open_historico">Abrir histórico</string>
+    <string name="back_home">Voltar ao início</string>
+</resources>
