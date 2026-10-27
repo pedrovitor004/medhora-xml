@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/homeFragment" android:icon="@drawable/ic_home" android:title="@string/home_title"/>
+    <item android:id="@+id/historicoFragment" android:icon="@drawable/ic_clock" android:title="@string/historico_title"/>
+    <item android:id="@+id/cadastroFragment" android:icon="@drawable/ic_add_circle" android:title="@string/add_short"/>
+    <item android:id="@+id/medicamentosFragment" android:icon="@drawable/ic_list" android:title="@string/medicamentos_short"/>
+    <item android:id="@+id/configuracoesFragment" android:icon="@drawable/ic_settings" android:title="@string/settings_short"/>
+</menu>

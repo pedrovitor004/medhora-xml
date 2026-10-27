@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:padding="24dp">
+    <ImageView android:layout_width="64dp" android:layout_height="64dp" android:padding="16dp" android:src="@drawable/ic_check" android:background="@drawable/bg_icon" app:tint="@color/medhora_green_primary" android:contentDescription="@string/success_description"/>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Title" android:text="@string/confirm_title" android:gravity="center" android:layout_marginTop="20dp"/>
+    <TextView android:id="@+id/confirmation_body" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Body" android:gravity="center" android:layout_marginTop="12dp"/>
+    <com.google.android.material.button.MaterialButton android:id="@+id/confirm_ok" style="@style/MedHora.Button" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/ok" android:layout_marginTop="24dp"/>
+</LinearLayout>

@@ -1,41 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.medhoraxml.ui.home.HomeFragment"
-        android:label="@string/home_title"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_home_to_cadastro"
-            app:destination="@id/cadastroFragment" />
-        <action
-            android:id="@+id/action_home_to_detalhes"
-            app:destination="@id/detalhesFragment" />
-        <action
-            android:id="@+id/action_home_to_historico"
-            app:destination="@id/historicoFragment" />
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph" app:startDestination="@id/splashFragment">
+    <fragment android:id="@+id/splashFragment" android:name="com.example.medhoraxml.ui.welcome.SplashFragment" android:label="@string/app_name"/>
+    <fragment android:id="@+id/onboardingFragment" android:name="com.example.medhoraxml.ui.welcome.OnboardingFragment" android:label="@string/app_name"/>
+    <fragment android:id="@+id/homeFragment" android:name="com.example.medhoraxml.ui.home.HomeFragment" android:label="@string/home_title"/>
+    <fragment android:id="@+id/historicoFragment" android:name="com.example.medhoraxml.ui.historico.HistoricoFragment" android:label="@string/historico_title"/>
+    <fragment android:id="@+id/medicamentosFragment" android:name="com.example.medhoraxml.ui.medicamentos.MedicamentosFragment" android:label="@string/medicamentos_title"/>
+    <fragment android:id="@+id/configuracoesFragment" android:name="com.example.medhoraxml.ui.configuracoes.ConfiguracoesFragment" android:label="@string/configuracoes_title"/>
+    <fragment android:id="@+id/cadastroFragment" android:name="com.example.medhoraxml.ui.cadastro.CadastroFragment" android:label="@string/cadastro_title">
+        <argument android:name="medicamentoId" app:argType="long" android:defaultValue="-1L"/>
     </fragment>
-
-    <fragment
-        android:id="@+id/cadastroFragment"
-        android:name="com.example.medhoraxml.ui.cadastro.CadastroFragment"
-        android:label="@string/cadastro_title"
-        tools:layout="@layout/fragment_cadastro" />
-
-    <fragment
-        android:id="@+id/detalhesFragment"
-        android:name="com.example.medhoraxml.ui.detalhes.DetalhesFragment"
-        android:label="@string/detalhes_title"
-        tools:layout="@layout/fragment_detalhes" />
-
-    <fragment
-        android:id="@+id/historicoFragment"
-        android:name="com.example.medhoraxml.ui.historico.HistoricoFragment"
-        android:label="@string/historico_title"
-        tools:layout="@layout/fragment_historico" />
-
+    <fragment android:id="@+id/detalhesFragment" android:name="com.example.medhoraxml.ui.detalhes.DetalhesFragment" android:label="@string/detalhes_title">
+        <argument android:name="medicamentoId" app:argType="long"/>
+    </fragment>
+    <dialog android:id="@+id/doseConfirmadaDialog" android:name="com.example.medhoraxml.ui.home.DoseConfirmadaDialog" android:label="@string/confirm_title">
+        <argument android:name="nome" app:argType="string"/>
+        <argument android:name="dosagem" app:argType="string"/>
+        <argument android:name="horario" app:argType="string"/>
+    </dialog>
 </navigation>

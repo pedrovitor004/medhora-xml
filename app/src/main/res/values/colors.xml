@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Amostras originais do Figma: 1:16, 1:17, 1:19, 1:21 e 1:23. -->
+    <color name="medhora_green_dark">#064E3B</color>
+    <color name="medhora_green_primary">#059669</color>
+    <color name="medhora_green_accent">#10B981</color>
+    <color name="medhora_green_light">#D1FAE5</color>
+    <color name="medhora_background">#F8FAFC</color>
+    <!-- Valores auxiliares aproximados: o protótipo contém telas rasterizadas, sem tokens de texto ou estados. -->
+    <color name="medhora_white">#FFFFFF</color>
+    <color name="medhora_text">#183B35</color>
+    <color name="medhora_muted">#71838A</color>
+    <color name="medhora_border">#E2E8EB</color>
+    <color name="medhora_surface_muted">#F1F5F4</color>
+    <color name="medhora_error">#E05252</color>
+    <color name="medhora_error_light">#FFF1F1</color>
+    <color name="medhora_warning">#946200</color>
+    <color name="medhora_warning_light">#FFF7DF</color>
+    <color name="medhora_pill_yellow">#F2B500</color>
+    <color name="medhora_pill_lilac">#9B7BC5</color>
+    <color name="medhora_scrim">#66000000</color>
+    <color name="medhora_transparent">#00000000</color>
 </resources>
