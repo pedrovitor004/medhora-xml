@@ -19,7 +19,7 @@ O **MedHora** é um aplicativo Android acadêmico proposto para facilitar a orga
 
 Este repositório é dedicado à implementação com **Kotlin, layouts XML e navegação com Fragments**, desenvolvida no contexto da disciplina de **Programação para Dispositivos Móveis (PDM)** do **Instituto Federal da Paraíba (IFPB) — Campus Monteiro**.
 
-> **Status:** em desenvolvimento. As funcionalidades abaixo representam o escopo planejado do miniprojeto.
+> **Status:** implementação XML com navegação e gerenciamento de medicamentos em memória. Os dados são temporários e reiniciam com o processo do aplicativo.
 
 ## 🎯 Objetivos
 
@@ -28,14 +28,14 @@ Este repositório é dedicado à implementação com **Kotlin, layouts XML e nav
 - Permitir consultar medicamentos cadastrados e registrar doses tomadas.
 - Aplicar os conceitos de Activities, Fragments, navegação e manipulação de dados no Android.
 
-## 📱 Funcionalidades planejadas
+## 📱 Funcionalidades implementadas
 
-- Cadastro de medicamentos com nome, dose e horário.
+- Cadastro e edição de medicamentos com nome, dose, múltiplos horários, frequência e observações.
 - Listagem dos medicamentos cadastrados.
 - Visualização de detalhes de cada medicamento.
 - Registro de doses como tomadas ou pendentes.
 - Consulta ao histórico de registros.
-- Edição e exclusão de medicamentos, conforme a evolução do projeto.
+- Exclusão com confirmação, busca e atualização reativa das telas via LiveData.
 
 ## 🛠️ Tecnologias
 
@@ -47,7 +47,7 @@ Este repositório é dedicado à implementação com **Kotlin, layouts XML e nav
 | **Fragments** | Organização e navegação entre telas |
 | **Android Studio** | Ambiente de desenvolvimento |
 
-## 🧭 Telas previstas
+## 🧭 Telas implementadas
 
 1. **Início:** medicamentos e horários do dia.
 2. **Cadastro:** formulário para adicionar medicamentos.
@@ -86,3 +86,14 @@ O mesmo conceito de aplicativo também está sendo desenvolvido com **Jetpack Co
 Projeto acadêmico desenvolvido no IFPB — Campus Monteiro.
 
 </div>
+
+
+## Implementação XML
+
+O fluxo inclui splash, onboarding, início com seleção de dias e resumo, cadastro/edição, detalhes, medicamentos, histórico com filtros Hoje/7 dias/30 dias, configurações e confirmação de dose. Utiliza Fragments, RecyclerView, Material Components e Navigation Component.
+
+O aplicativo começa sem medicamentos. O usuário faz todos os cadastros, que ficam somente em memória. Os lembretes locais mostram nome, dosagem e horário; a escolha de som fica nas configurações do celular. O aviso por voz fala o medicamento e a dosagem em português. Ajustes oferece controle de volume de alarme e prévia da voz, com síntese offline do celular. Ative os lembretes em Ajustes e permita as notificações e, para maior precisão, os horários exatos. Sem persistência, se o Android encerrar o processo ou o aparelho reiniciar, os dados e a continuidade dos lembretes são perdidos. Não há banco de dados, autenticação ou serviços externos.
+
+Consulte [as decisões e o inventário de arquivos](docs/IMPLEMENTACAO.md). A [referência visual original](docs/prototipo-medhora.png) foi obtida do Figma. A identidade verde e o logotipo são os originais; os detalhes visuais sem estilos editáveis foram aproximados a partir da imagem.
+
+Nesta entrega não foram executados compilação, testes, emuladores ou comandos Git.
