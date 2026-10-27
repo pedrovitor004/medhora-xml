@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="40dp" android:height="40dp" android:viewportWidth="40" android:viewportHeight="40">
+    <path android:fillColor="@color/medhora_border" android:pathData="M11,34 C5,34 2,27 6,22 L22,6 C27,1 35,5 35,11 C35,14 34,15 32,17 L17,32 C15,34 13,34 11,34 Z"/>
+    <path android:fillColor="@color/medhora_pill_lilac" android:pathData="M6,22 L14,14 L26,26 L17,34 C11,39 1,29 6,22 Z"/>
+    <path android:fillColor="@color/medhora_white" android:fillAlpha="0.45" android:pathData="M19,11 L24,6 C28,3 32,6 31,8 L22,17 Z"/>
+</vector>
