@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp"
-    tools:context=".ui.cadastro.CadastroFragment">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/cadastro_title"
-        android:textSize="24sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="@string/placeholder_message" />
-
-    <Button
-        android:id="@+id/button_back_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/back_home" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/medhora_background">
+    <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="56dp" app:title="@string/cadastro_title" app:titleTextAppearance="@style/MedHora.Title" app:titleTextColor="@color/medhora_text" app:navigationIcon="@drawable/ic_back" app:navigationContentDescription="@string/back"/>
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+            <ImageView android:id="@+id/medicine_icon" android:layout_width="72dp" android:layout_height="72dp" android:src="@drawable/ic_capsule" android:contentDescription="@string/pill_description" android:layout_gravity="center" android:padding="14dp" android:background="@drawable/bg_icon"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Caption" android:text="@string/icon_label" android:gravity="center" android:layout_marginTop="12dp"/>
+            <com.google.android.material.chip.ChipGroup android:id="@+id/color_group" android:layout_width="match_parent" android:layout_height="wrap_content" app:singleSelection="true" app:selectionRequired="true" app:checkedChip="@id/color_green">
+                <com.google.android.material.chip.Chip android:id="@+id/color_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/green" android:checkable="true"/>
+                <com.google.android.material.chip.Chip android:id="@+id/color_red" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/red" android:checkable="true"/>
+                <com.google.android.material.chip.Chip android:id="@+id/color_yellow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/yellow" android:checkable="true"/>
+                <com.google.android.material.chip.Chip android:id="@+id/color_lilac" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lilac" android:checkable="true"/>
+            </com.google.android.material.chip.ChipGroup>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Subtitle" android:text="@string/name_label" android:layout_marginTop="18dp" android:layout_marginBottom="6dp"/>
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/name_layout" android:layout_width="match_parent" android:layout_height="wrap_content" app:hintEnabled="false">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/name" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/name_hint" android:inputType="textCapSentences" android:maxLength="80" android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Subtitle" android:text="@string/dose_label" android:layout_marginTop="18dp" android:layout_marginBottom="6dp"/>
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/dose_layout" android:layout_width="match_parent" android:layout_height="wrap_content" app:hintEnabled="false">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/dose" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/dose_hint" android:inputType="textCapSentences" android:maxLength="80" android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Subtitle" android:text="@string/frequency_label" android:layout_marginTop="18dp" android:layout_marginBottom="6dp"/>
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/frequency_layout" style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@+id/frequency" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="none" android:importantForAutofill="no"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Subtitle" android:text="@string/times_label" android:layout_marginTop="18dp" android:layout_marginBottom="8dp"/>
+            <LinearLayout android:id="@+id/time_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
+            <TextView android:id="@+id/time_error" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Caption" android:textColor="@color/medhora_error" android:visibility="gone"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/add_time" style="@style/MedHora.OutlineButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/add_time" app:icon="@drawable/ic_plus"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Subtitle" android:text="@string/notes_label" android:layout_marginTop="18dp" android:layout_marginBottom="6dp"/>
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/notes_layout" android:layout_width="match_parent" android:layout_height="wrap_content" app:hintEnabled="false">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/notes" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/notes_hint" android:inputType="textCapSentences|textMultiLine" android:maxLength="500" android:minLines="2" android:maxLines="5"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.button.MaterialButton android:id="@+id/save" style="@style/MedHora.Button" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/save" android:layout_marginHorizontal="20dp" android:layout_marginBottom="12dp"/>
 </LinearLayout>
