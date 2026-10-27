@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/medhora_background">
+    <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="56dp" app:title="@string/configuracoes_title" app:titleTextAppearance="@style/MedHora.Title" app:titleTextColor="@color/medhora_text" app:menu="@menu/header_menu"/>
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Subtitle" android:text="@string/notifications"/>
+            <com.google.android.material.card.MaterialCardView style="@style/MedHora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="18dp">
+                    <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/reminders" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/reminders" android:textAppearance="@style/MedHora.Body"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Caption" android:text="@string/reminders_subtitle"/>
+                    <LinearLayout android:id="@+id/sound" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:minHeight="52dp">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_bell" android:contentDescription="@string/pill_description" android:importantForAccessibility="no"/>
+                        <TextView android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Body" android:text="@string/sound" android:layout_width="0dp" android:layout_weight="1" android:paddingHorizontal="12dp"/>
+                        <TextView android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Caption" android:id="@+id/sound_name" android:text="@string/sound_default" android:gravity="end" android:maxWidth="108dp" android:layout_width="wrap_content"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Caption" android:text="@string/sound_help"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/MedHora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="18dp">
+                    <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/voice_enabled" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/voice_title" android:textAppearance="@style/MedHora.Subtitle"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Body" android:text="@string/voice_help" android:layout_marginTop="8dp"/>
+                    <TextView android:id="@+id/voice_volume_label" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Subtitle" android:layout_marginTop="16dp"/>
+                    <SeekBar android:id="@+id/voice_volume" android:layout_width="match_parent" android:layout_height="48dp" android:contentDescription="@string/voice_title"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Caption" android:text="@string/voice_volume_help"/>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/voice_preview" style="@style/MedHora.Button" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/voice_preview" android:layout_marginTop="12dp"/>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/voice_settings" style="@style/MedHora.OutlineButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/voice_settings"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Caption" android:text="@string/voice_permission_help"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.button.MaterialButton android:id="@+id/exact_alarm" style="@style/MedHora.OutlineButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/exact_alarm_disabled"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Caption" android:text="@string/exact_alarm_help"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Subtitle" android:text="@string/appearance" android:layout_marginTop="24dp"/>
+            <com.google.android.material.card.MaterialCardView style="@style/MedHora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="18dp">
+                    <LinearLayout android:id="@+id/theme" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:minHeight="52dp">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_settings" android:contentDescription="@string/pill_description" android:importantForAccessibility="no"/>
+                        <TextView android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Body" android:text="@string/theme" android:layout_width="0dp" android:layout_weight="1" android:paddingHorizontal="12dp"/>
+                        <TextView android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Caption" android:text="@string/light" android:layout_width="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Subtitle" android:text="@string/about" android:layout_marginTop="24dp"/>
+            <com.google.android.material.card.MaterialCardView style="@style/MedHora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="18dp">
+                    <LinearLayout android:id="@+id/version" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:minHeight="52dp">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_info" android:contentDescription="@string/pill_description" android:importantForAccessibility="no"/>
+                        <TextView android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Body" android:text="@string/version" android:layout_width="0dp" android:layout_weight="1" android:paddingHorizontal="12dp"/>
+                        <TextView android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Caption" android:text="@string/version_value" android:layout_width="wrap_content"/>
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/team" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:minHeight="52dp">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_list" android:contentDescription="@string/pill_description" android:importantForAccessibility="no"/>
+                        <TextView android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Body" android:text="@string/developed_by" android:layout_width="0dp" android:layout_weight="1" android:paddingHorizontal="12dp"/>
+                        <TextView android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Caption" android:text="@string/team" android:layout_width="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Caption" android:text="@string/settings_notice" android:layout_marginTop="20dp"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Caption" android:text="@string/memory_notice" android:layout_marginTop="12dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/medhora_background">
+    <com.google.android.material.button.MaterialButton android:id="@+id/skip" style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="end" android:layout_marginEnd="20dp" android:text="@string/skip"/>
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+            <ImageView android:layout_width="240dp" android:layout_height="240dp" android:layout_gravity="center" android:layout_marginTop="32dp" android:scaleType="fitCenter" android:src="@drawable/medhora_logo" android:contentDescription="@string/logo_description"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Title" android:text="@string/onboarding_title" android:gravity="center" android:layout_marginTop="24dp"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Body" android:text="@string/onboarding_body" android:gravity="center" android:layout_marginTop="16dp" android:textColor="@color/medhora_muted"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/MedHora.Caption" android:text="@string/memory_notice" android:gravity="center" android:layout_marginTop="24dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.button.MaterialButton android:id="@+id/start" style="@style/MedHora.Button" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/start" android:layout_margin="20dp"/>
+</LinearLayout>

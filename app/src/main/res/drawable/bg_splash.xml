@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/medhora_background"/>
+        </shape>
+    </item>
+    <item android:width="220dp" android:height="220dp" android:gravity="top|left" android:top="-100dp" android:left="-100dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/medhora_green_light"/>
+        </shape>
+    </item>
+    <item android:width="260dp" android:height="260dp" android:gravity="bottom|right" android:bottom="-130dp" android:right="-110dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/medhora_green_light"/>
+        </shape>
+    </item>
+</layer-list>
