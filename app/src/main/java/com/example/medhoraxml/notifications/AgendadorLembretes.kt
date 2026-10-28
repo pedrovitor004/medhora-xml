@@ -104,11 +104,7 @@ object AgendadorLembretes {
         if (med == esperado.medicamento && state.lembretes &&
             state.doses.none { it.chave == esperado.dose.chave && it.tomadaEm != null } &&
             esperado.instante <= System.currentTimeMillis()) {
-            if (Notificacoes.mostrarDose(context, esperado.dose) && state.vozAtivada) {
-                // Alarmes exatos solicitados pelo usuário permitem o serviço em segundo plano.
-                // Se o sistema impedir o início, o aviso mantém a ação explícita “Ouvir lembrete”.
-                VozLembreteService.iniciar(context, VozLembreteService.intentDose(context, esperado.dose))
-            }
+            Notificacoes.mostrarDose(context, esperado.dose)
         }
         assinatura = null
         atualizar(context, state)

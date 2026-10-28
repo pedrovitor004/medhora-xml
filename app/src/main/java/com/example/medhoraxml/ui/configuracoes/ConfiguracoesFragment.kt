@@ -6,9 +6,6 @@ import android.app.AlarmManager
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.media.RingtoneManager
-import android.media.AudioManager
-import android.widget.SeekBar
-import com.example.medhoraxml.notifications.VozLembreteService
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -82,41 +79,6 @@ class ConfiguracoesFragment : Fragment(R.layout.fragment_configuracoes) {
                 }
             }
         }
-        view.findViewById<MaterialSwitch>(R.id.voice_enabled).setOnCheckedChangeListener { _, enabled ->
-            if (!sincronizando) {
-                MedicamentoRepository.definirVoz(enabled)
-                if (!enabled) requireContext().stopService(Intent(requireContext(), VozLembreteService::class.java))
-            }
-        }
-        val audio = requireContext().getSystemService(AudioManager::class.java)
-        view.findViewById<SeekBar>(R.id.voice_volume).apply {
-            max = audio.getStreamMaxVolume(AudioManager.STREAM_ALARM)
-            setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-                override fun onProgressChanged(bar: SeekBar?, progress: Int, fromUser: Boolean) {
-                    view.findViewById<TextView>(R.id.voice_volume_label).text = getString(R.string.voice_volume,
-                        progress * 100 / maxOf(1, max))
-                    if (fromUser) {
-                        try { audio.setStreamVolume(AudioManager.STREAM_ALARM, progress, 0) }
-                        catch (_: SecurityException) {
-                            Snackbar.make(view, R.string.voice_unavailable, Snackbar.LENGTH_LONG).show()
-                        }
-                    }
-                }
-                override fun onStartTrackingTouch(bar: SeekBar?) = Unit
-                override fun onStopTrackingTouch(bar: SeekBar?) = Unit
-            })
-        }
-        view.findViewById<View>(R.id.voice_preview).setOnClickListener {
-            if (!VozLembreteService.ouvirPrevia(requireContext())) {
-                Snackbar.make(view, R.string.voice_unavailable, Snackbar.LENGTH_LONG).show()
-            }
-        }
-        view.findViewById<View>(R.id.voice_settings).setOnClickListener {
-            try { startActivity(Intent("com.android.settings.TTS_SETTINGS")) }
-            catch (_: ActivityNotFoundException) {
-                Snackbar.make(view, R.string.voice_settings_missing, Snackbar.LENGTH_LONG).show()
-            }
-        }
         MedicamentoRepository.state.observe(viewLifecycleOwner) { atualizarEstado() }
     }
 
@@ -130,13 +92,7 @@ class ConfiguracoesFragment : Fragment(R.layout.fragment_configuracoes) {
         sincronizando = true
         view.findViewById<MaterialSwitch>(R.id.reminders).isChecked =
             MedicamentoRepository.state.value?.lembretes == true && Notificacoes.permitidas(requireContext())
-        view.findViewById<MaterialSwitch>(R.id.voice_enabled).isChecked = MedicamentoRepository.state.value?.vozAtivada == true
         sincronizando = false
-        val audio = requireContext().getSystemService(AudioManager::class.java)
-        val volume = audio.getStreamVolume(AudioManager.STREAM_ALARM)
-        val maxVolume = maxOf(1, audio.getStreamMaxVolume(AudioManager.STREAM_ALARM))
-        view.findViewById<SeekBar>(R.id.voice_volume).progress = volume
-        view.findViewById<TextView>(R.id.voice_volume_label).text = getString(R.string.voice_volume, volume * 100 / maxVolume)
         view.findViewById<TextView>(R.id.sound_name).text = Notificacoes.nomeDoSom(requireContext())
         view.findViewById<MaterialButton>(R.id.exact_alarm).apply {
             val exatos = Build.VERSION.SDK_INT < 31 || requireContext().getSystemService(AlarmManager::class.java).canScheduleExactAlarms()

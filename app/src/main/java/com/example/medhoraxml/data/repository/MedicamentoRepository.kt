@@ -16,7 +16,6 @@ object MedicamentoRepository {
     private val doses = linkedMapOf<String, Dose>()
     private val diasGerados = mutableSetOf<Pair<Long, LocalDate>>()
     private var lembretes = false
-    private var vozAtivada = true
     private val mutableState = MutableLiveData(MedHoraState())
     val state: LiveData<MedHoraState> = mutableState
 
@@ -69,12 +68,6 @@ object MedicamentoRepository {
         publicar()
     }
 
-    @MainThread
-    fun definirVoz(ativada: Boolean) {
-        vozAtivada = ativada
-        publicar()
-    }
-
     /** Materializa a agenda ao abrir a tela e a cada minuto, inclusive na virada do dia. */
     @MainThread
     fun atualizar() {
@@ -106,6 +99,6 @@ object MedicamentoRepository {
         Dose(m.id, m.nome, m.dosagem, m.cor, data, horario)
 
     private fun publicar() {
-        mutableState.value = MedHoraState(medicamentos.toList(), doses.values.toList(), lembretes, vozAtivada)
+        mutableState.value = MedHoraState(medicamentos.toList(), doses.values.toList(), lembretes)
     }
 }

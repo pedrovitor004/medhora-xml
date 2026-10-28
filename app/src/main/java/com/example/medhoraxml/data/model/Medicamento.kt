@@ -52,6 +52,5 @@ data class Dose(
 data class MedHoraState(
     val medicamentos: List<Medicamento> = emptyList(),
     val doses: List<Dose> = emptyList(),
-    val lembretes: Boolean = false,
-    val vozAtivada: Boolean = true
+    val lembretes: Boolean = false
 )

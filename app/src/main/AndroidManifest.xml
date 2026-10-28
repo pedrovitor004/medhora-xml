@@ -5,13 +5,6 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
 
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
-    <queries>
-        <intent><action android:name="android.intent.action.TTS_SERVICE"/></intent>
-    </queries>
-
     <application
         android:name=".MedHoraApplication"
         android:allowBackup="true"
@@ -32,7 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".notifications.VozLembreteService" android:exported="false" android:foregroundServiceType="mediaPlayback"/>
         <receiver android:name=".notifications.LembreteReceiver" android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.TIME_SET"/>

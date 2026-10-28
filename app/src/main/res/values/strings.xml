@@ -130,20 +130,4 @@
     <string name="exact_alarm_disabled">Permitir horários exatos</string>
     <string name="exact_alarm_help">Sem essa permissão, o Android pode atrasar os lembretes.</string>
     <string name="enable_reminders">Ativar lembretes</string>
-    <string name="voice_title">Falar o lembrete em voz alta</string>
-    <string name="voice_help">Uma voz em português fala o nome e a dose cadastrados. A leitura usa o volume de alarme do celular.</string>
-    <string name="voice_preview">Ouvir prévia da voz</string>
-    <string name="voice_stop">Parar voz</string>
-    <string name="voice_listen">Ouvir lembrete</string>
-    <string name="voice_settings">Configurar voz do celular</string>
-    <string name="voice_volume">Volume da voz: %1$d%%</string>
-    <string name="voice_volume_help">Ajusta também o volume dos alarmes do celular. Não altera o volume automaticamente ao avisar.</string>
-    <string name="voice_sentence">Hora de tomar o medicamento %1$s. Dose: %2$s.</string>
-    <string name="voice_preview_empty">Este é o aviso por voz do MedHora. No horário cadastrado, vou falar o nome do medicamento e a dose.</string>
-    <string name="voice_channel">Leitura dos lembretes</string>
-    <string name="voice_playing">MedHora está falando o lembrete</string>
-    <string name="voice_missing">Voz em português indisponível. Configure uma voz offline em português nas opções de voz do celular.</string>
-    <string name="voice_unavailable">Não foi possível reproduzir a voz agora. Confira o volume e as configurações de voz do celular.</string>
-    <string name="voice_permission_help">Para falar automaticamente com o app minimizado, permita horários exatos. O modo Não Perturbe e as configurações de áudio do celular podem silenciar a voz.</string>
-    <string name="voice_settings_missing">As configurações de voz não estão disponíveis neste celular.</string>
 </resources>

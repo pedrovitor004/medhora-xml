@@ -92,8 +92,8 @@ Projeto acadêmico desenvolvido no IFPB — Campus Monteiro.
 
 O fluxo inclui splash, onboarding, início com seleção de dias e resumo, cadastro/edição, detalhes, medicamentos, histórico com filtros Hoje/7 dias/30 dias, configurações e confirmação de dose. Utiliza Fragments, RecyclerView, Material Components e Navigation Component.
 
-O aplicativo começa sem medicamentos. O usuário faz todos os cadastros, que ficam somente em memória. Os lembretes locais mostram nome, dosagem e horário; a escolha de som fica nas configurações do celular. O aviso por voz fala o medicamento e a dosagem em português. Ajustes oferece controle de volume de alarme e prévia da voz, com síntese offline do celular. Ative os lembretes em Ajustes e permita as notificações e, para maior precisão, os horários exatos. Sem persistência, se o Android encerrar o processo ou o aparelho reiniciar, os dados e a continuidade dos lembretes são perdidos. Não há banco de dados, autenticação ou serviços externos.
+O aplicativo começa sem medicamentos. O usuário faz todos os cadastros, que ficam somente em memória. Os lembretes locais são notificações com nome, dosagem e horário; a escolha de som fica nas configurações do celular. Ative os lembretes em Ajustes e permita as notificações e, para maior precisão, os horários exatos. Sem persistência, se o Android encerrar o processo ou o aparelho reiniciar, os dados e a continuidade dos lembretes são perdidos. Não há banco de dados, autenticação ou serviços externos.
 
 Consulte [as decisões e o inventário de arquivos](docs/IMPLEMENTACAO.md). A [referência visual original](docs/prototipo-medhora.png) foi obtida do Figma. A identidade verde e o logotipo são os originais; os detalhes visuais sem estilos editáveis foram aproximados a partir da imagem.
 
-Nesta entrega não foram executados compilação, testes, emuladores ou comandos Git.
+Na atualização para lembretes somente por notificação, `assembleDebug` gerou o APK e `testDebugUnitTest` passou. O `lintDebug` encontrou um erro preexistente em `res/values/themes.xml`: `android:windowLightNavigationBar` exige API 27, mas o tema base atende minSdk 24. A execução em dispositivo permanece pendente.

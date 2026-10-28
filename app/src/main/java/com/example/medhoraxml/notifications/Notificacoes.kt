@@ -18,7 +18,6 @@ import androidx.core.content.ContextCompat
 import com.example.medhoraxml.MainActivity
 import com.example.medhoraxml.R
 import com.example.medhoraxml.data.model.Dose
-import com.example.medhoraxml.data.repository.MedicamentoRepository
 import com.example.medhoraxml.ui.common.texto
 
 /** Apresentação dos lembretes. O som do canal é controlado pelo usuário no Android 8+. */
@@ -89,13 +88,6 @@ object Notificacoes {
             .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
             .setContentIntent(pending).setAutoCancel(true)
             .setSound(somLegado)
-        if (MedicamentoRepository.state.value?.vozAtivada == true) {
-            val intentVoz = VozLembreteService.intentDose(context, dose)
-            val flags = PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-            val falar = if (Build.VERSION.SDK_INT >= 26) PendingIntent.getForegroundService(context, 0, intentVoz, flags)
-                else PendingIntent.getService(context, 0, intentVoz, flags)
-            builder.addAction(R.drawable.ic_bell, context.getString(R.string.voice_listen), falar)
-        }
         val notificacao = builder.build()
         return try {
             // Tag completa evita colisões entre medicamentos e entre dias/horários.
